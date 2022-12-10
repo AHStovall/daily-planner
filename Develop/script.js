@@ -116,16 +116,21 @@ saveButtonSix.click('click', function(){
 });
 
 
-
+//Function to pull local storage
 function displayTasks() {
-  
-  if ('task9' !== null) {
-    textValue9.textContent = localStorage.getItem('task9');
-    
-    
-  }
+  textValue9[0].textContent = localStorage.getItem('task9');
+  textValue10[0].textContent = localStorage.getItem('task10');
+  textValue11[0].textContent = localStorage.getItem('task11');
+  textValue12[0].textContent = localStorage.getItem('task12');
+  textValue1[0].textContent = localStorage.getItem('task1');
+  textValue2[0].textContent = localStorage.getItem('task2');
+  textValue3[0].textContent = localStorage.getItem('task3');
+  textValue4[0].textContent = localStorage.getItem('task4');
+  textValue5[0].textContent = localStorage.getItem('task5');
+  textValue6[0].textContent = localStorage.getItem('task6');
 };
 
+//First function to start upon loading the page
 function init() {
   // Calls the Previous tasks from the local storage
   displayTasks();
@@ -134,3 +139,4 @@ function init() {
   displayTime();
   setInterval(displayTime, 1000);
 }
+init();
