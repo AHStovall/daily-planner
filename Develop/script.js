@@ -11,14 +11,28 @@ var saveButtonFive = $('.btn-5');
 var saveButtonSix = $('.btn-6');
 var row = $('.row')
 
+//Variables for the entryText per timeblock
+var text9 = $("#desc-9");
+var text10 = $("#desc-10");
+var text11 = $("#desc-11");
+var text12 = $("#desc-12");
+var text1 = $("#desc-1");
+var text2 = $("#desc-2");
+var text3 = $("#desc-3");
+var text4 = $("#desc-4");
+var text5 = $("#desc-5");
+var text6 = $("#desc-6");
+
+
+text9.value = [];
+
+
 //Variables for Saving information, Timer, and Arrays
 var entryText = $(".description").value;
 var inputArea = $("textarea");
 
 var todayDateHeader = dayjs();
 var timeEl = $("#date-time");
-
-var description = [];
 
 var currentHour = parseInt(dayjs().format('HH'));
 
@@ -49,7 +63,7 @@ function displayTime() {
 }
 
 saveButtonNine.click(function(){
-  localStorage.setItem('Task-9', JSON.stringify(entryText));
+  localStorage.setItem('Task-9', text9);
 });
 
 saveButtonTen.click('click', function(){
@@ -101,3 +115,15 @@ function init() {
   displayTime();
   setInterval(displayTime, 1000);
 }
+
+// function renderLastRegistered() {
+//   var email = localStorage.getItem("email");
+//   var password = localStorage.getItem("password");
+
+//   if (!email || !password) {
+//     return;
+//   }
+
+//   userEmailSpan.textContent = email;
+//   userPasswordSpan.textContent = password;
+// }
