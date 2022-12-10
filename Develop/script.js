@@ -1,3 +1,4 @@
+//Variables for each of the time blocks on the html
 var saveButtonNine = $('.btn-9');
 var saveButtonTen = $('.btn-10');
 var saveButtonEleven = $('.btn-11');
@@ -10,7 +11,8 @@ var saveButtonFive = $('.btn-5');
 var saveButtonSix = $('.btn-6');
 var row = $('.row')
 
-var entryText = $("#description").value;
+//Variables for Saving information, Timer, and Arrays
+var entryText = $(".description").value;
 var inputArea = $("textarea");
 
 var todayDateHeader = dayjs();
@@ -27,6 +29,7 @@ var futureArr = [];
 
 console.log(typeof currentHour);
 
+//Logic for color call out
 row.each(function(){
   var rowTime = parseInt($(this).attr("data-hour"));
 console.log(rowTime);
@@ -39,19 +42,62 @@ console.log(rowTime);
   }
 });
 
+//Function to display time at the top of screen
 function displayTime() {
   var currentTime = dayjs().format('MMM DD, YYYY hh:mm:ss a');
   timeEl.text(currentTime);
 }
 
+saveButtonNine.click(function(){
+  localStorage.setItem('Task-9', JSON.stringify(entryText));
+});
 
-displayTime();
-setInterval(displayTime, 1000);
+saveButtonTen.click('click', function(){
+  localStorage.setItem('Task-10', entryText);
+});
+
+saveButtonEleven.click('click', function(){
+  localStorage.setItem('Task-11', entryText);
+});
+
+saveButtonTwelve.click('click', function(){
+  localStorage.setItem('Task-12', entryText);
+});
+
+saveButtonOne.click('click', function(){
+  localStorage.setItem('Task-1', entryText);
+});
+
+saveButtonTwo.click('click', function(){
+  localStorage.setItem('Task-2', entryText);
+});
+
+saveButtonThree.click('click', function(){
+  localStorage.setItem('Task-3', entryText);
+});
+
+saveButtonFour.click('click', function(){
+  localStorage.setItem('Task-4', entryText);
+});
+
+saveButtonFive.click('click', function(){
+  localStorage.setItem('Task-5', entryText);
+});
+
+saveButtonSix.click('click', function(){
+  localStorage.setItem('Task-6', entryText);
+});
 
 
-function saveTasks() {
-  
-};
+// function displayTasks() {
+//   if (
+// };
 
-function displayTasks() {};
+function init() {
+  // Calls the Previous tasks from the local storage
+  displayTasks();
 
+  // Calling Function to display time at top of screen
+  displayTime();
+  setInterval(displayTime, 1000);
+}
