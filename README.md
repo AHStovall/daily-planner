@@ -6,3 +6,4 @@ I seemed to have a lot of difficulties when it came to local storage, when pulli
 
 This project also had some difficulties in file management, as you may find some commits are spread apart across different files and different versions. I mainted the files within the "Develop" folder in order to track the commits made.
 
+https://ahstovall.github.io/daily-planner/
