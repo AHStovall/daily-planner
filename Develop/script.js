@@ -24,7 +24,20 @@ var text5 = $("#desc-5");
 var text6 = $("#desc-6");
 
 
-text9.value = [];
+var textValue9 = $('textarea#desc-9');
+var textValue10 = $('textarea#desc-10');
+var textValue11 = $('textarea#desc-11');
+var textValue12 = $('textarea#desc-12');
+var textValue1 = $('textarea#desc-1');
+var textValue2 = $('textarea#desc-2');
+var textValue3 = $('textarea#desc-3');
+var textValue4 = $('textarea#desc-4');
+var textValue5 = $('textarea#desc-5');
+var textValue6 = $('textarea#desc-6');
+
+//This can be converted into a for loop for effency in future
+console.log(textValue9[0].value);
+console.log(text9.value);
 
 
 //Variables for Saving information, Timer, and Arrays
@@ -63,49 +76,55 @@ function displayTime() {
 }
 
 saveButtonNine.click(function(){
-  localStorage.setItem('Task-9', text9);
+  localStorage.setItem('task9', textValue9[0].value);
 });
 
 saveButtonTen.click('click', function(){
-  localStorage.setItem('Task-10', entryText);
+  localStorage.setItem('Task10', textValue10[0].value);
 });
 
 saveButtonEleven.click('click', function(){
-  localStorage.setItem('Task-11', entryText);
+  localStorage.setItem('Task11', textValue11[0].value);
 });
 
 saveButtonTwelve.click('click', function(){
-  localStorage.setItem('Task-12', entryText);
+  localStorage.setItem('Task12', textValue12[0].value);
 });
 
 saveButtonOne.click('click', function(){
-  localStorage.setItem('Task-1', entryText);
+  localStorage.setItem('Task1', textValue1[0].value);
 });
 
 saveButtonTwo.click('click', function(){
-  localStorage.setItem('Task-2', entryText);
+  localStorage.setItem('Task2', textValue2[0].value);
 });
 
 saveButtonThree.click('click', function(){
-  localStorage.setItem('Task-3', entryText);
+  localStorage.setItem('Task3', textValue3[0].value);
 });
 
 saveButtonFour.click('click', function(){
-  localStorage.setItem('Task-4', entryText);
+  localStorage.setItem('Task4', textValue4[0].value);
 });
 
 saveButtonFive.click('click', function(){
-  localStorage.setItem('Task-5', entryText);
+  localStorage.setItem('Task5', textValue5[0].value);
 });
 
 saveButtonSix.click('click', function(){
-  localStorage.setItem('Task-6', entryText);
+  localStorage.setItem('Task6', textValue6[0].value);
 });
 
 
-// function displayTasks() {
-//   if (
-// };
+
+function displayTasks() {
+  
+  if ('task9' !== null) {
+    textValue9.textContent = localStorage.getItem('task9');
+    
+    
+  }
+};
 
 function init() {
   // Calls the Previous tasks from the local storage
@@ -115,15 +134,3 @@ function init() {
   displayTime();
   setInterval(displayTime, 1000);
 }
-
-// function renderLastRegistered() {
-//   var email = localStorage.getItem("email");
-//   var password = localStorage.getItem("password");
-
-//   if (!email || !password) {
-//     return;
-//   }
-
-//   userEmailSpan.textContent = email;
-//   userPasswordSpan.textContent = password;
-// }
